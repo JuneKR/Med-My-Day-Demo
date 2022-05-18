@@ -1,8 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+/* new import */ 
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import LoginPage from './LoginPage';
 
 function App() {
   return (
+    <div>
+      <LoginPage/>
+    </div>
+    /*
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,6 +27,7 @@ function App() {
         </a>
       </header>
     </div>
+    */
   );
 }
 
