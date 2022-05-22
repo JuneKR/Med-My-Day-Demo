@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
+import { Form, Alert, InputGroup, Button, ButtonGroup, Container } from "react-bootstrap";
 import DrugDataService from "../services/drug.services";
 
 const AddDrug = ({ id, setDrugId }) => {
@@ -13,7 +13,7 @@ const AddDrug = ({ id, setDrugId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
-    if (title === "" || amount === "") {
+    if (title === "" || amount === "" || description === "") {
       setMessage({ error: true, msg: "All fields are mandatory!" });
       return;
     }
@@ -40,6 +40,7 @@ const AddDrug = ({ id, setDrugId }) => {
 
     setTitle("");
     setAmount("");
+    setDescription("");
   };
 
   const editHandler = async () => {
@@ -65,7 +66,9 @@ const AddDrug = ({ id, setDrugId }) => {
   return (
     <>
       <br />
-      <h2>Drug Information Details</h2>
+      <Container Container style={{ marginTop: "50px"}}>
+        <h2>Drug Information Page</h2>
+      </Container>
       <div className="p-4 box">
         {message?.msg && (
           <Alert
@@ -80,7 +83,7 @@ const AddDrug = ({ id, setDrugId }) => {
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formDrugTitle">
             <InputGroup>
-              <InputGroup.Text id="formDrugTitle">T</InputGroup.Text>
+              <InputGroup.Text id="formDrugTitle">M</InputGroup.Text>
               <Form.Control
                 type="text"
                 placeholder="Drug Title"
@@ -92,7 +95,7 @@ const AddDrug = ({ id, setDrugId }) => {
 
           <Form.Group className="mb-3" controlId="formDrugAmount">
             <InputGroup>
-              <InputGroup.Text id="formDrugAmount">A</InputGroup.Text>
+              <InputGroup.Text id="formDrugAmount">M</InputGroup.Text>
               <Form.Control
                 type="text"
                 placeholder="Drug Amount"
@@ -138,7 +141,7 @@ const AddDrug = ({ id, setDrugId }) => {
           </ButtonGroup> */}
 
           <div className="d-grid gap-2">
-            <Button variant="primary" type="Submit">
+            <Button variant="warning" type="Submit">
               Add/ Update
             </Button>
           </div>

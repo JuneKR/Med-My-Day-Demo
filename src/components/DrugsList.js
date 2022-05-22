@@ -27,13 +27,12 @@ const DrugsList = ({ getDrugId }) => {
                 </Button>
             </div>
 
-            {/* <pre>{JSON.stringify(drugs, undefined, 2)}</pre>} */}
             <Table striped bordered hover size="sm">
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Drug Title</th>
-                    <th>Drug Amount</th>
+                    <th>Title</th>
+                    <th>Amount</th>
                     <th>Description</th>
                     <th>Action</th>
                 </tr>
